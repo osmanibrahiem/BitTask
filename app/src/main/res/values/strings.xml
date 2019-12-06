@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Bit Task</string>
+    <string name="posts_title">Posts</string>
+    <string name="followers_title">Followers</string>
+    <string name="following_title">Following</string>
+
+    <string name="error_header_no_internet">Connection timed out or\nthere\'s no internet connection</string>
+    <string name="error_message_no_internet">Sorry! couldn\'t load your data, an error occurred while connecting. please check your internet connection then try again.</string>
+
+    <string name="error_header_no_data">Oops.. No result found</string>
+    <string name="error_message_no_data">Sorry! couldn\'t receive any data from the server, please try again later</string>
+
+
+    <string name="error_header_404">Oops.. 404 page</string>
+    <string name="error_message_404">An error occurred while connecting, maybe your internet connection is weak, maybe a problem from the server or maybe another problem</string>
+
+    <string name="error_header_unknown">Oops.. unknown error</string>
+    <string name="error_message_unknown">An error occurred while connecting, maybe a problem from the server or maybe another problem</string>
+    <string name="try_again">Try again</string>
+
+
+</resources>

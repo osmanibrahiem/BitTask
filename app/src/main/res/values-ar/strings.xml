@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Bit Task</string>
+    <string name="posts_title">المنشورات</string>
+    <string name="followers_title">متابعون</string>
+    <string name="following_title">متابع</string>
+
+    <string name="error_header_no_internet">انتهت مهلة الاتصال أو\nلا يوجد اتصال بالإنترنت</string>
+    <string name="error_message_no_internet">نآسف! تعذر تحميل بياناتك ، حدث خطأ أثناء الاتصال. يرجى التحقق من اتصالك بالإنترنت ثم حاول مرة أخرى.</string>
+
+    <string name="error_header_no_data">أوبس.. لم يتم العثور على اي نتيجة</string>
+    <string name="error_message_no_data">نآسف! تعذر تلقي أي بيانات من الخادم ، يرجى إعادة المحاولة لاحقًا</string>
+
+    <string name="error_header_404">أوبس.. صفحة 404</string>
+    <string name="error_message_404">حدث خطأ أثناء الاتصال ، ربما يكون اتصالك بالإنترنت ضعيفًا أو ربما مشكلة من الخادم أو ربما مشكلة أخرى</string>
+
+    <string name="error_header_unknown">أوبس.. حدث خطأ ما</string>
+    <string name="error_message_unknown">حدث خطأ أثناء الاتصال، ربما مشكلة من الخادم أو ربما مشكلة أخرى</string>
+    <string name="try_again">حاول مرة اخرى</string>
+
+
+</resources>

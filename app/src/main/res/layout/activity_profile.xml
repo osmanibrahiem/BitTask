@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.beintrack.bittask.ui.viewmodel.ProfileViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.view.profile.ProfileActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.profileData != null ? View.VISIBLE : View.GONE}">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/app_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackground"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        app:contentScrim="?attr/colorPrimary"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_collapseMode="pin">
+
+                            <com.infinityandroid.roundedimageview.RoundedImageView
+                                android:id="@+id/user_image"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="@dimen/_20sdp"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:adjustViewBounds="true"
+                                android:profile="@{viewModel.profileData.profilePicture}"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="1:1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.05"
+                                app:make_circle="true" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/user_name"
+                                style="@style/AppTheme.Heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:text="@{viewModel.profileData.fullName}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/user_image"
+                                app:layout_constraintTop_toTopOf="@id/user_image" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/user_location"
+                                style="@style/AppTheme.SubHeading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.profileData.location}"
+                                app:layout_constraintEnd_toEndOf="@id/user_name"
+                                app:layout_constraintStart_toStartOf="@id/user_name"
+                                app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/user_bio"
+                                style="@style/AppTheme.Content"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:text="@{viewModel.profileData.bio}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/user_location"
+                                app:layout_constraintStart_toStartOf="@id/user_location"
+                                app:layout_constraintTop_toBottomOf="@id/user_location"
+                                app:layout_constraintVertical_bias="0.10" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_250sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:contentPadding="@dimen/_5sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.Header"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewModel.profileData.counts.posts.toString()}" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.SupHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/posts_title" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.Header"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewModel.profileData.counts.followers.toString()}" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.SupHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/followers_title" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.Header"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewModel.profileData.counts.following.toString()}" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/AppTheme.Content.SupHeader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/following_title" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/images_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:spanCount="@integer/span_count"
+                    tools:itemCount="20"
+                    tools:listitem="@layout/item_image" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.errorData == null ? View.GONE : View.VISIBLE}">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/error_image"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@{viewModel.errorData.errorImage}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.20" />
+
+                <LinearLayout
+                    android:id="@+id/error_message_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/error_image"
+                    app:layout_constraintVertical_bias="0.30">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/error_header"
+                        style="@style/AppTheme.Content.Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.errorData.errorHeader}" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/error_message"
+                        style="@style/AppTheme.Content.SupHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:text="@{viewModel.errorData.errorMessage}" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_try"
+                    android:layout_width="wrap_content"
+                    android:text="@string/try_again"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()-> viewModel.getProfile()}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/error_message_layout"
+                    app:layout_constraintStart_toStartOf="@id/error_message_layout"
+                    app:layout_constraintTop_toBottomOf="@id/error_message_layout"
+                    app:layout_constraintVertical_bias="0.70" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

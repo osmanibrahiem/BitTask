@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.TextAppearance.Text.Large" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Text.Medium" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="fontFamily">@font/font_light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Text.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Text.SubTitle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="fontFamily">@font/font_light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Text.Content" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="fontFamily">@font/font_light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.Heading">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Text.Large</item>
+    </style>
+
+    <style name="AppTheme.SubHeading" parent="AppTheme.Heading">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Text.SubTitle</item>
+    </style>
+
+    <style name="AppTheme.Content" parent="AppTheme.SubHeading">
+        <item name="android:textColor">@color/semi_gray</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Text.Content</item>
+    </style>
+
+    <style name="AppTheme.Content.Header">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">@style/AppTheme.TextAppearance.Text.Medium</item>
+    </style>
+
+    <style name="AppTheme.Content.SupHeader" parent="AppTheme.SubHeading">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+</resources>
