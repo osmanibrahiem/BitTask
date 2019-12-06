@@ -1,4 +1,4 @@
-# BitTask
+# Bit Task (Profile Page)
 This repository contains a detailed sample app that implements MVVM architecture using RxJava, Retrofit, and Glide
 
 <p align="center">
